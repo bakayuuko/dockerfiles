@@ -1,18 +1,18 @@
-version: '3'
+version: '2.4'
 
 services:
   dnscrypt-proxy:
     container_name: dnscrypt-proxy
-    image: jauderho/dnscrypt-proxy
+    image: jauderho/dnscrypt-proxy:latest
     ports:
       - 5353:5353/udp
     restart: always
     volumes:
       - "./config:/config:rw"
       - /etc/localtime:/etc/localtime:ro
-    deploy:
-      mode: replicated
-      replicas: 2
+    mem_limit: 51m
+    mem_reservation: 16m
+    cpus: 0.1
 networks:
   default:
     external:

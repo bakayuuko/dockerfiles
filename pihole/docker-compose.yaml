@@ -1,11 +1,11 @@
-version: "3"
+version: "2.4"
 
 # https://github.com/pi-hole/docker-pi-hole/blob/master/README.md
 
 services:
   pihole:
     container_name: pihole
-    image: edgd1er/pihole
+    image: edgd1er/pihole:latest
     # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
     ports:
       - "192.168.1.26:53:53/tcp" #192.168.1.26 = host ip
@@ -28,3 +28,6 @@ services:
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
+    mem_limit: 84m
+    mem_reservation: 48m
+    cpus: 0.5
