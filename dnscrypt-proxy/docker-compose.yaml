@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  dnscrypt-proxy:
+    container_name: dnscrypt-proxy
+    image: jauderho/dnscrypt-proxy
+    ports:
+      - 5353:5353/udp
+    restart: always
+    volumes:
+      - "./config:/config:rw"
+      - /etc/localtime:/etc/localtime:ro
+    deploy:
+      mode: replicated
+      replicas: 2
+networks:
+  default:
+    external:
+      name: pihole_default
