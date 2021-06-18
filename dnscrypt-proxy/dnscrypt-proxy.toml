@@ -792,10 +792,7 @@ fragments_blocked = ['cisco', 'cisco-ipv6', 'cisco-familyshield', 'cisco-familys
 # ]
 
 routes = [
-   { server_name='odoh-id-gmail', via=['odohrelay-crypto-sx'] },
-   { server_name='doh.tiarap.org', via=['anon-tiarap'] },
-   { server_name='jp.tiarap.org', via=['anon-tiarap'] },
-   { server_name='jp.tiar.app-doh', via=['anon-tiarap'] }
+   { server_name='odoh-id-gmail', via=['odohrelay-crypto-sx'] }
 ]
 
 # Skip resolvers incompatible with anonymization instead of using them directly
