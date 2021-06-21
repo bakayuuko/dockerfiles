@@ -1,0 +1,16 @@
+version: '2.4'
+
+services:
+  dnsproxy:
+    container_name: dnsproxy
+    image: dnsproxy:latest
+    ports:
+      - 10053:10053/udp
+    restart: always
+    mem_limit: 51m
+    mem_reservation: 16m
+    cpus: 0.2
+networks:
+  default:
+    external:
+      name: pihole_default
