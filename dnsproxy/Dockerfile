@@ -7,8 +7,7 @@ WORKDIR /tmp
 RUN DLINK=$(curl 'https://api.github.com/repos/AdguardTeam/dnsproxy/releases' | grep dnsproxy-linux-arm64 | cut -d '"' -f 4 | sed -n 2p) && \
     wget ${DLINK} && \
     mkdir dnsproxy && \
-    tar -xzf dnsproxy-linux-arm64-* -C dnsproxy && \
-    chmod 777 dnsproxy/linux-arm64/dnsproxy
+    tar -xzf dnsproxy-linux-arm64-* -C dnsproxy
 
 FROM alpine:latest
 
